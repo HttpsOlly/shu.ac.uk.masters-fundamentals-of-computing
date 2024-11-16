@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Mercury",
+        "mass": 330110000000000000000000,
+        "distance": 29000000,
+        "moons": [],
+        "number_of_moons": 0
+    },
+    {
+        "name": "Venus",
+        "mass": 4867510000000000000000000,
+        "distance": 67237910,
+        "moons": [],
+        "number_of_moons": 0
+    },
+    {
+        "name": "Earth",
+        "mass": 5972168000000000000000000,
+        "distance": 93000000,
+        "moons": ["Moon"],
+        "number_of_moons": 1
+    },
+    {
+        "name": "Mars",
+        "mass": 641710000000000000000000,
+        "distance": 142000000,
+        "moons": ["Phobos", "Deimos"],
+        "number_of_moons": 2
+    },
+    {
+        "name": "Jupiter",
+        "mass": 1898200000000000000000000000,
+        "distance": 484000000,
+        "moons": ["Ganymede", "Callisto", "Io", "Europa", "Himalia", "Amalthea", "Thebe", "Elara", "Pasiphae", "Carme"],
+        "number_of_moons": 95
+    },
+    {
+        "name": "Saturn",
+        "mass": 568340000000000000000000000,
+        "distance": 886000000,
+        "moons": ["Titan", "Rhea", "Iapetus", "Dione", "Tethys", "Enceladus", "Mimas", "Phoebe", "Hyperion", "Janus"],
+        "number_of_moons": 146
+    },
+    {
+        "name": "Uranus",
+        "mass": 86810000000000000000000000,
+        "distance": 1800000000,
+        "moons": ["Titania", "Oberon", "Umbriel", "Ariel", "Miranda", "Sycorax", "Puck", "Portia", "Juliet", "Belinda"],
+        "number_of_moons": 28
+    },
+    {
+        "name": "Neptune",
+        "mass": 102409000000000000000000000,
+        "distance": 2800000000,
+        "moons": ["Triton", "Proteus", "Nereid", "Larissa", "Galatea", "Despina", "Thalassa", "Naiad", "Halimede", "Neso"],
+        "number_of_moons": 16
+    }
+]
