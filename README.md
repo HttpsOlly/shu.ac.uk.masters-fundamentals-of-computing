@@ -1,1 +1,1 @@
-# shu.ac.uk.masters-fundamentals-of-computing
+# uk.ac.shu.masters-fundamentals-of-computing
