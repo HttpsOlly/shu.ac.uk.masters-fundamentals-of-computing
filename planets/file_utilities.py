@@ -2,6 +2,7 @@ import json
 from planet import Planet
 
 class FileUtilities:
+    @staticmethod
     def load_planets(filename):
         with open(filename, 'r') as file:
             data = json.load(file)

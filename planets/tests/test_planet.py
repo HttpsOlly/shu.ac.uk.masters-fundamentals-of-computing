@@ -20,9 +20,17 @@ class TestPlanetZeroMoons(unittest.TestCase):
             "Distance from the Sun: 123456789 km\n"
             "Number of Moons: 0\n"
         )
-        with patch('builtins.print') as mocked_print:
-            str = self.planet.to_string()
-            self.assertEqual(str, expected_output)
+        
+        str = self.planet.to_string()
+        self.assertEqual(str, expected_output)
+
+    def test_describe_mass(self):
+        str = self.planet.describe_mass()
+        self.assertEqual(str, "The mass of Planet Name is 1e+23 kg\n")
+
+    def test_describe_moons(self):
+        str = self.planet.describe_moons()
+        self.assertEqual(str, "Planet Name has 0 moons. \n")
 
 class TestPlanetOneMoon(unittest.TestCase):
     def setUp(self):
@@ -43,9 +51,21 @@ class TestPlanetOneMoon(unittest.TestCase):
             "Number of Moons: 1\n"
             "Here the moons I know about: Moon\n"
         )
-        with patch('builtins.print') as mocked_print:
-            str = self.planet.to_string()
-            self.assertEqual(str, expected_output)
+    
+        str = self.planet.to_string()
+        self.assertEqual(str, expected_output)
+
+    def test_describe_moons(self):
+        str = self.planet.describe_moons()
+        self.assertEqual(str, "Planet Name has 1 moon, it is named Moon\n")
+
+class TestPlanetMultipleMoons(unittest.TestCase):
+    def setUp(self):
+        self.planet = Planet("Planet Name", 1e+23, 123456789, 2, ["Moon 1", "Moon 2"])
+
+    def test_describe_moons(self):
+        str = self.planet.describe_moons()
+        self.assertEqual(str, "Planet Name has 2 moons. Here the moons I know about: Moon 1, Moon 2\n")
 
 if __name__ == '__main__':
     unittest.main()

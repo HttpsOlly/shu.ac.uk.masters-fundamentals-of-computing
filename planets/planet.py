@@ -14,3 +14,15 @@ class Planet(object):
         if (self.moons):
             str +=f"Here the moons I know about: {', '.join(self.moons)}\n"
         return str
+    
+    def describe_mass(self):
+        return f"The mass of {self.name} is {self.mass} kg\n"
+    
+    def describe_moons(self):
+        if (self.number_of_moons == 1):
+            str = f"{self.name} has 1 moon, it is named {self.moons[0]}"
+        else:
+            str = f"{self.name} has {self.number_of_moons} moons. "
+            if (self.moons):
+                str += f"Here the moons I know about: {', '.join(self.moons)}"
+        return str + "\n"
