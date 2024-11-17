@@ -14,5 +14,12 @@ class TestLoadPlanets(unittest.TestCase):
         self.assertEqual(planets[0].distance, 12345678)
         self.assertEqual(planets[0].moons, ["Moon"])
 
+    @patch('builtins.open', new_callable=mock_open, read_data='[{"malformed": "data"}]')
+    def test_load_planets_whole_file_is_malformed(self, mock_file):
+        with patch('builtins.print') as mocked_print:
+            planets = FileUtilities.load_planets('planets.json')
+            self.assertEqual(len(planets), 0)
+            mocked_print.assert_called_with("Failed to load file, malformed contents")
+
 if __name__ == '__main__':
     unittest.main()
