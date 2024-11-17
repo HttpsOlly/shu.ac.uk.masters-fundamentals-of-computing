@@ -31,15 +31,13 @@ Notes:
 - Do not make a Web-based solution.
 - Do not use a relational database.
 
-# Test Plan
-1. Assert that a Planet class can be instantiated
-    1. With zero moons
-    1. With one or more moons
-1. Assert that planets can be loaded from a file 
-    1. Happy path where planets have any number of moons
-    1. Unhappy path using defensive programming loading a malformed file
-
-# To test
+# To Test
+The test plan is here: [TEST_PLAN.md](TEST_PLAN.md)
 ```
 python3 -m unittest discover -s tests
+```
+
+# To Run
+```
+python3 main.py
 ```
