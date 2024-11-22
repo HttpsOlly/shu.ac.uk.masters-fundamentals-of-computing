@@ -1,5 +1,16 @@
 class Planet(object):
     def __init__(self, name, mass, distance, number_of_moons, moons):
+        if not isinstance(name, str):
+            raise TypeError("name must be a string")
+        if not isinstance(mass, (int, float)):
+            raise TypeError("mass must be a number")
+        if not isinstance(distance, (int, float)):
+            raise TypeError("distance must be a number")
+        if not isinstance(moons, list):
+            raise TypeError("moons must be a list")
+        if not all(isinstance(moon, str) for moon in moons):
+            raise TypeError("all moons must be strings")
+
         self.name = name
         self.mass = mass
         self.distance = distance

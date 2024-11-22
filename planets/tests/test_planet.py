@@ -2,6 +2,28 @@ import unittest
 from unittest.mock import patch, mock_open
 from planet import Planet
 
+class TestPlanetConstructorDataTypes(unittest.TestCase):
+
+    def test_invalid_name_type(self):
+        with self.assertRaises(TypeError):
+            Planet(123, 1e+23, 123456789, 0, [])
+
+    def test_invalid_mass_type(self):
+        with self.assertRaises(TypeError):
+            Planet("Planet Name", "not a number", 123456789, 0, [])
+
+    def test_invalid_distance_type(self):
+        with self.assertRaises(TypeError):
+            Planet("Planet Name", 1e+23, "not a number", 0, [])
+
+    def test_invalid_moons_type(self):
+        with self.assertRaises(TypeError):
+            Planet("Planet Name", 1e+23, 123456789, 0, "not a list")
+
+    def test_invalid_moon_element_type(self):
+        with self.assertRaises(TypeError):
+            Planet("Planet Name", 1e+23, 123456789, 0, ["Moon", 123])
+
 class TestPlanetZeroMoons(unittest.TestCase):
     def setUp(self):
         self.planet = Planet("Planet Name", 1e+23, 123456789, 0, [])
