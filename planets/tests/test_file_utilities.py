@@ -16,10 +16,9 @@ class TestLoadPlanets(unittest.TestCase):
 
     @patch('builtins.open', new_callable=mock_open, read_data='[{"malformed": "data"}]')
     def test_load_planets_whole_file_is_malformed(self, mock_file):
-        with patch('builtins.print') as mocked_print:
+        with self.assertRaises(ValueError) as context:
             planets = FileUtilities.load_planets('planets.json')
-            self.assertEqual(len(planets), 0)
-            mocked_print.assert_called_with("Failed to load file, malformed contents")
+        self.assertTrue('Failed to load file, malformed contents.' in str(context.exception))
 
 if __name__ == '__main__':
     unittest.main()

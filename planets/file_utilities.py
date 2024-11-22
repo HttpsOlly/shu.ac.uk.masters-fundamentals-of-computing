@@ -9,5 +9,4 @@ class FileUtilities:
             try:
                 return [Planet(**planet) for planet in data]
             except:
-                print("Failed to load file, malformed contents")
-                return []
+                raise ValueError('Failed to load file, malformed contents.')
